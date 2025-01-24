@@ -144,24 +144,17 @@
         </div>
         <p>&copy;MaulanaTech</p>
     </div>
-  <script>
-  // Variabel untuk menyimpan audio
-  let audio = new Audio('vocher.mp3');
+  <audio id="welcomeAudio" src="vocher.mp3" autoplay></audio>
 
-  // Fungsi untuk memutar audio otomatis
-  function playAudio() {
-    // Periksa apakah audio sudah siap diputar
-    if (audio.readyState === 4) {
-      audio.play();
-    } else {
-      // Jika audio belum siap, tunggu 1 detik dan coba lagi
-      setTimeout(playAudio, 1000);
-    }
-  }
-
-  // Jalankan fungsi playAudio ketika halaman selesai dimuat
-  document.addEventListener('DOMContentLoaded', playAudio);
-</script>  
+    <script>
+        // Memastikan audio diputar otomatis saat halaman dimuat
+        window.onload = function() {
+            const audio = document.getElementById('welcomeAudio');
+            audio.play().catch(error => {
+                console.error('Audio tidak dapat diputar secara otomatis:', error);
+            });
+        };
+    </script>
 </body>
 </html>
 
