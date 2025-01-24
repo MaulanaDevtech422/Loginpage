@@ -91,7 +91,18 @@
      <a href="https://wa.me/6285712816240?text=Halo,+admin+saya+ingin+info+pemasangan+wifi" class="btn">Hubungi Sekarang</a><br> 
            <a href="index.html" class="back-icon">
   <li class="fas fa-arrow-left"> back</li> 
-</a>
+         </a>
     </div>
+    <audio id="welcomeAudio" src="jasa.mp3" autoplay></audio>
+
+    <script>
+        // Memastikan audio diputar otomatis saat halaman dimuat
+        window.onload = function() {
+            const audio = document.getElementById('welcomeAudio');
+            audio.play().catch(error => {
+                console.error('Audio tidak dapat diputar secara otomatis:', error);
+            });
+        };
+    </script>
 </body>
 </html>
