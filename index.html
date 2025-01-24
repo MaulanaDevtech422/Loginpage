@@ -144,16 +144,16 @@
         </div>
         <p>&copy;MaulanaTech</p>
     </div>
-  <audio id="welcomeAudio" src="vocher.mp3" autoplay></audio>
+  <audio id="welcomeAudio" src="vocher.mp3"></audio>
 
     <script>
         // Memastikan audio diputar otomatis saat halaman dimuat
-        window.onload = function() {
+        document.addEventListener('DOMContentLoaded', function() {
             const audio = document.getElementById('welcomeAudio');
             audio.play().catch(error => {
                 console.error('Audio tidak dapat diputar secara otomatis:', error);
             });
-        };
+        });
     </script>
 </body>
 </html>
