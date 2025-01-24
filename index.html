@@ -144,6 +144,24 @@
         </div>
         <p>&copy;MaulanaTech</p>
     </div>
+  <script>
+  // Variabel untuk menyimpan audio
+  let audio = new Audio('vocher.mp3');
+
+  // Fungsi untuk memutar audio otomatis
+  function playAudio() {
+    // Periksa apakah audio sudah siap diputar
+    if (audio.readyState === 4) {
+      audio.play();
+    } else {
+      // Jika audio belum siap, tunggu 1 detik dan coba lagi
+      setTimeout(playAudio, 1000);
+    }
+  }
+
+  // Jalankan fungsi playAudio ketika halaman selesai dimuat
+  document.addEventListener('DOMContentLoaded', playAudio);
+</script>  
 </body>
 </html>
 
