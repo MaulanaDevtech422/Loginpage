@@ -148,12 +148,18 @@
 
     <script>
         // Memastikan audio diputar otomatis saat halaman dimuat
-        document.addEventListener('DOMContentLoaded', function() {
+        window.onload = function() {
             const audio = document.getElementById('welcomeAudio');
             audio.play().catch(error => {
                 console.error('Audio tidak dapat diputar secara otomatis:', error);
+
+                // Solusi untuk mengatasi autoplay yang dibatasi oleh browser
+                document.body.addEventListener('click', function playAudioOnce() {
+                    audio.play();
+                    document.body.removeEventListener('click', playAudioOnce);
+                });
             });
-        });
+        };
     </script>
 </body>
 </html>
